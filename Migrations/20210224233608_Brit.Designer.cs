@@ -9,15 +9,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment_5.Migrations
 {
     [DbContext(typeof(BookDbContext))]
-    [Migration("20210219004513_Initial")]
-    partial class Initial
+    [Migration("20210224233608_Brit")]
+    partial class Brit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("ProductVersion", "5.0.3")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Assignment_5.Models.Book", b =>
@@ -33,8 +33,14 @@ namespace Assignment_5.Migrations
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Classification")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ISBN")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Pages")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
