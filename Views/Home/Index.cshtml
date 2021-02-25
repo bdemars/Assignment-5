@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Library";
 }
 
 @model BookListViewModel
@@ -9,30 +9,32 @@
     <img width="350" src="~/img/logo.png" />
 </div>
 
-<table class="centertable">
-    <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Publisher</th>
-        <th>ISBN</th>
-        <th>Classification</th>
-        <th>Category</th>
-        <th>Price</th>
-        <th>Pages</th>
-    </tr>
-    @foreach (var x in Model.Books)
-    {
-    <tr>
-        <td>@x.Title</td>
-        <td>@x.Author</td>
-        <td>@x.Publisher</td>
-        <td>@x.ISBN</td>
-        <td>@x.Category</td>
-        <td>@x.Classification</td>
-        <td>$@x.Price</td>
-        <td>@x.Pages</td>
-    </tr>
-    }
-</table>
+@foreach (var x in Model.Books)
+{
+    <div class="card card-outline-primary m-1 p-1">
+        <div class="bg-light p-1">
+            <h2>
+                Title: @x.Title
+            </h2>
+            <h4>Author: @x.Author</h4>
+            <p>Category: @x.Category</p>
+            <p>Classification: @x.Classification</p>
+            <p>Pages: @x.Pages</p>
+            <p>Publisher: @x.Publisher</p>
+            <p>ISBN: @x.ISBN</p>
+            <p class="font-weight-bold">Price: @x.Price</p>
 
-<div page-model="@Model.PagingInfo" page-action="Index"></div>
+        </div>
+    </div>
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+             page-class-normal="btn-outline-dark"
+             page-class-selected="btn-primary"
+             class="btn-group m-1 col-4">
+
+        </div>
+    </div>
+</div>
