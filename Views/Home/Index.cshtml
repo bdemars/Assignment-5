@@ -4,37 +4,18 @@
 
 @model BookListViewModel
 
-<div class="text-center">
-    <h1>Welcome to Amazon</h1>
-    <img width="350" src="~/img/logo.png" />
-</div>
-
 @foreach (var x in Model.Books)
 {
-    <div class="card card-outline-primary m-1 p-1">
-        <div class="bg-light p-1">
-            <h2>
-                Title: @x.Title
-            </h2>
-            <h4>Author: @x.Author</h4>
-            <p>Category: @x.Category</p>
-            <p>Classification: @x.Classification</p>
-            <p>Pages: @x.Pages</p>
-            <p>Publisher: @x.Publisher</p>
-            <p>ISBN: @x.ISBN</p>
-            <p class="font-weight-bold">Price: @x.Price</p>
-
-        </div>
-    </div>
+    <partial name="BookSummary" model="x" />
 }
 
+<!--Footer for page navigation-->
 <div class="container">
     <div class="row justify-content-center">
         <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
              page-class-normal="btn-outline-dark"
-             page-class-selected="btn-primary"
+             page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
              class="btn-group m-1 col-4">
-
         </div>
     </div>
 </div>

@@ -25,7 +25,10 @@ namespace Assignment_5.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Author")
+                    b.Property<string>("AuthorFirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AuthorLastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Category")

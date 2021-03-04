@@ -26,7 +26,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "Les Miserables",
-                        Author = "Victor Hugo",
+                        AuthorFirstName = "Victor",
+                        AuthorLastName = "Hugo",
                         Publisher = "Signet",
                         ISBN = "978-0451419439",
                         Category = "Fiction",
@@ -38,7 +39,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "Team of Rivals",
-                        Author = "Doris Kearns Goodwin",
+                        AuthorFirstName = "Doris",
+                        AuthorLastName = "Kearns Goodwin",
                         Publisher = "Simon & Schuster",
                         ISBN = "978-0743270755",
                         Category = "Non-Fiction",
@@ -50,7 +52,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "The Snowball",
-                        Author = "Alice Schroeder",
+                        AuthorFirstName = "Alice",
+                        AuthorLastName = "Schroeder",
                         Publisher = "Bantam",
                         ISBN = "978-0553384611",
                         Category = "Non-Fiction",
@@ -62,7 +65,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "American Ulysses",
-                        Author = "Ronald C. White",
+                        AuthorFirstName = "Ronald C.",
+                        AuthorLastName = "White",
                         Publisher = "Random House",
                         ISBN = "978-0812981254",
                         Category = "Non-Fiction",
@@ -74,7 +78,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "Unbroken",
-                        Author = "Laura Hillenbrand",
+                        AuthorFirstName = "Laura",
+                        AuthorLastName = "Hillenbrand",
                         Publisher = "Random House",
                         ISBN = "978-0812974492",
                         Category = "Non-Fiction",
@@ -86,7 +91,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "The Great Train Robbery",
-                        Author = "Micheal Crichton",
+                        AuthorFirstName = "Micheal",
+                        AuthorLastName = "Crichton",
                         Publisher = "Vintage",
                         ISBN = "978-0804171281",
                         Category = "Fiction",
@@ -98,7 +104,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "Deep Work",
-                        Author = "Cal Newport",
+                        AuthorFirstName = "Cal",
+                        AuthorLastName = "Newport",
                         Publisher = "Grand Central Publishing",
                         ISBN = "978-1455586691",
                         Category = "Non-Fiction",
@@ -110,7 +117,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "It's Your Ship",
-                        Author = "Michael Abrashoff",
+                        AuthorFirstName = "Michael",
+                        AuthorLastName = "Abrashoff",
                         Publisher = "Grand Central Publishing",
                         ISBN = "978-1455523023",
                         Category = "Non-Fiction",
@@ -122,7 +130,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "The Virgin Way",
-                        Author = "Richard Branson",
+                        AuthorFirstName = "Richard",
+                        AuthorLastName = "Branson",
                         Publisher = "Portfolio",
                         ISBN = "978-1591847984",
                         Category = "Non-Fiction",
@@ -134,7 +143,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "Sycamore Row",
-                        Author = "John Grisham",
+                        AuthorFirstName = "John",
+                        AuthorLastName = "Grisham",
                         Publisher = "Bantam",
                         ISBN = "978-0553393613",
                         Category = "Non-Fiction",
@@ -146,7 +156,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "Mistborn",
-                        Author = "Brandon Sanderson",
+                        AuthorFirstName = "Brandon",
+                        AuthorLastName = "Sanderson",
                         Publisher = "Tor Books",
                         ISBN = "981-1427275103",
                         Category = "Fiction",
@@ -158,7 +169,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "How To Win Friends And Influence People",
-                        Author = "Dale Carnegie",
+                        AuthorFirstName = "Dale",
+                        AuthorLastName = "Carnegie",
                         Publisher = "Simon & Schuster",
                         ISBN = "978-1442344815",
                         Category = "Non-Fiction",
@@ -170,7 +182,8 @@ namespace Assignment_5.Models
                     new Book
                     {
                         Title = "Eragon",
-                        Author = "Christopher Paolini",
+                        AuthorFirstName = "Christopher",
+                        AuthorLastName = "Paolini",
                         Publisher = "Paolini LLC",
                         ISBN = "978-0553393613",
                         Category = "Fiction",
