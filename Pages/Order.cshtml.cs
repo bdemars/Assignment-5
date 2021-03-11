@@ -9,14 +9,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Assignment_5.Pages
 {
-    public class BuyModel : PageModel
+    public class OrderModel : PageModel
     {
         private iBookRepository repository;
 
         //Constructor
-        public BuyModel (iBookRepository repo)
+        public OrderModel(iBookRepository repo, Cart cartService)
         {
             repository = repo;
+            Cart = cartService;
         }
 
         //Properties
@@ -27,19 +28,19 @@ namespace Assignment_5.Pages
         public void OnGet(string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
-
         public IActionResult OnPost(long bookId, string returnUrl)
         {
-            Book book = repository.Books.FirstOrDefault(b => b.BookID == bookId);
+            Book product = repository.Books
+                .FirstOrDefault(b => b.BookID == bookId);
+            Cart.AddItem(product, 1);
+            return RedirectToPage(new { returnUrl = returnUrl });
+        }
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
-
-            Cart.AddItem(book, 1);
-
-            HttpContext.Session.SetJson("cart", Cart);
-
+        public IActionResult OnPostRemove(long bookId, string returnUrl)
+        {
+            Cart.RemoveLine(Cart.Lines.First(cl =>
+                cl.Book.BookID == bookId).Book);
             return RedirectToPage(new { returnUrl = returnUrl });
         }
     }

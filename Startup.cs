@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Assignment_5.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace Assignment_5
 {
@@ -39,6 +40,10 @@ namespace Assignment_5
             services.AddDistributedMemoryCache();
 
             services.AddSession();
+
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,21 +71,21 @@ namespace Assignment_5
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("catpage",
-                    "{category}/{page:int}",
+                    "{category}/{pageNum:int}",
                     new { Controller = "Home", action = "Index" }
                     );
 
-                endpoints.MapControllerRoute("page",
-                    "{page:int}",
+                endpoints.MapControllerRoute("pageNum",
+                    "{pageNum:int}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("category",
                     "{category}",
-                    new { Controller = "Home", action = "index", page = 1 });
+                    new { Controller = "Home", action = "index", pageNum = 1 });
 
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "Books/{page}",
+                    "Books/{pageNum}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
